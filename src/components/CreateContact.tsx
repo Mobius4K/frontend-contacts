@@ -16,8 +16,12 @@ interface DATA {
 
 export const CreateContact = (): JSX.Element => {
 
+
+  // creamos este navigate para generar redirecciones
   const navigate = useNavigate()
 
+
+  // Creamos un state para obtener los datos que seran modificados en el form
   const [contact, setContact] = useState<DATA>({
     nombre: "",
     apellido: "",
@@ -27,6 +31,7 @@ export const CreateContact = (): JSX.Element => {
     direccion: "",
   });
 
+  // Con esta funcion update capturamos los datos al momento de digitarlos en el formulario
   const updateState = (e: React.ChangeEvent<HTMLInputElement>) => {
     setContact({
       ...contact,
@@ -34,6 +39,9 @@ export const CreateContact = (): JSX.Element => {
     });
   };
 
+
+  /* Hacemos una funciona Handle para enviar los datos al momento de que sean capturados 
+  por los inputs*/
   const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     swal({
