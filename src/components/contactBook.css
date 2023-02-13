@@ -80,6 +80,9 @@
   cursor: pointer;
 }
 
+.btn-views:hover{
+  background-color: rgba(154, 145, 233, 0.871);
+}
 .btn-crud {
   margin: auto;
   justify-content: center;

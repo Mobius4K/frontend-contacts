@@ -13,14 +13,14 @@ interface DATA {
   
 export const UseContact =()=>{
 
-    const [contact, setContact] = useState<DATA[]>([]);
+    const [contactBook, setContactBook] = useState<DATA[]>([]);
 
     //Creamos una constante para almacenar la URL de la api la cual tenemos creada con una variable de entorno
     const URL = import.meta.env.VITE_URL_BACK;
     const datasContact = () => {
       fetch(URL)
         .then((res) => res.json())
-        .then((data) => setContact(data));
+        .then((data) => setContactBook(data));
     };
     useEffect(() => {
       datasContact();
@@ -29,8 +29,8 @@ export const UseContact =()=>{
 
 
 return{
-    contact,
-    setContact,
+    contactBook,
+    setContactBook,
 
 }
 

@@ -17,6 +17,7 @@ interface DATA {
 export const CreateContact = (): JSX.Element => {
 
   const navigate = useNavigate()
+
   const [contact, setContact] = useState<DATA>({
     nombre: "",
     apellido: "",
@@ -139,10 +140,9 @@ export const CreateContact = (): JSX.Element => {
             />
           </div>
 
-          <button type="submit" className="btn-createContact">
+          <button  type="submit" className="btn-createContact">
            Guardar
           </button>
-               
               <button className="btn-return" onClick={()=>navigate("/")}> Regresar </button>
         </div>
       </form>

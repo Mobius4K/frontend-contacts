@@ -1,6 +1,8 @@
 import "./contactBook.css";
 import { Link } from "react-router-dom";
-import { handleDeleteContact } from "../services/contactBook";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import swal from "sweetalert";
 import {
   Card,
   Table,
@@ -15,10 +17,29 @@ import editImg from "../assets/pencil.png";
 import viewImg from "../assets/eye.png"
 import contactoImg from "../assets/contactos.png";
 import { UseContact } from "../hooks/UseContact";
+
 export const ContactBook = () => {
   
+const {contactBook, setContactBook} = UseContact()
+const navigate = useNavigate()
 
-  const {contact} = UseContact()
+
+//Funcion para eliminar un registro
+const handleDeleteContact = (id: number) => {
+  swal({
+    text: "¿Desea eliminar el siguiente contacto?",
+    icon: "warning",
+    buttons: ["NO", "SI"],
+  }).then((respuesta) => {
+    if (respuesta) {
+      axios.delete(`${import.meta.env.VITE_URL_BACK}/${id}`);
+      setContactBook(contactBook.filter((contactBook)=>contactBook.id!=id))
+    }
+    swal({text:"Contacto Eliminado!", icon:"success"})
+
+    navigate("/")
+  });
+};
 
   return (
     <div>
@@ -44,7 +65,7 @@ export const ContactBook = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {contact.map((datos) => (
+          {contactBook.map((datos) => (
           <TableRow key={datos.id}>
             <TableCell textAlignment="text-center">
              {datos.nombre}
@@ -66,17 +87,17 @@ export const ContactBook = () => {
             </TableCell>
             <TableCell textAlignment="text-center">
             <div className="btn-crud">
-           {/* <Link to={"/view/"+ datos.id}>
+         {/*<Link to={"/view/"+ datos.id}>
           <button  className="btn-views">
             <img src={viewImg} width={"25px"} height={"25px"} />
           </button>
           </Link>*/}
 
-        <button onClick={()=>handleDeleteContact(datos.id)} className="btn-delete">
+        <button onClick={()=>{handleDeleteContact(datos.id)}} className="btn-delete">
           <img src={deleteImg} width={"25px"} height={"25px"} />
         </button>
         <Link to={"/editContact/"+ datos.id}>
-          <button  className="btn-edit">
+          <button className="btn-edit">
             <img src={editImg} width={"25px"} height={"25px"} />
           </button>
         </Link>
