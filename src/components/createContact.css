@@ -51,29 +51,24 @@
   color: black;
 }
 
-.btn-view{
-
+.btn-view {
   background-color: #098765;
 
   width: 3rem;
   border: none;
   padding: 10px;
   border-radius: 10px;
-position: relative;
-left: 35rem;
-
+  position: relative;
+  left: 35rem;
 }
 
-
-.view{
-color: white;
-text-decoration: none;
-font-weight: 600;
-
+.view {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.btn-return{
-
+.btn-return {
   color: white;
   border: none;
   cursor: pointer;
@@ -83,12 +78,7 @@ font-weight: 600;
   display: flex;
   margin-top: 10px;
   font-weight: 600;
-
 }
-.btn-return:hover{
+.btn-return:hover {
   color: blue;
-
 }
-
-
-

@@ -1,0 +1,40 @@
+.inputs {
+  background-color: rgb(177, 175, 175);
+  display: flex;
+  margin: auto;
+  margin-top: 0.7rem;
+  padding: 0.5rem;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  font-weight: 600;
+}
+
+.form {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-submit {
+  background-color: #098765;
+  padding: 0.4rem;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: black;
+  font-weight: 600;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 1rem;
+}
+.btn-submit:hover {
+  background-color: #46ddb5;
+}
+
+.editTitle {
+  text-align: center;
+}

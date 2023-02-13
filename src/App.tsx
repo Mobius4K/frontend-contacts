@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { ContactBook } from "./components/ContactBook";
 import { CreateContact } from "./components/CreateContact";
-import { Modals } from './components/Modals';
+import { EditContact } from './components/EditContact';
 
 export const App = (): JSX.Element => {
   const router = createBrowserRouter([
@@ -16,13 +16,10 @@ export const App = (): JSX.Element => {
     },
     {
       path: "/editContact/:id",
-      element: <CreateContact />,
+      element: <EditContact/>,
     },
 
-    {
-      path: "/view/:id",
-      element: <Modals/>,
-    },
+
   ]);
 
   return (

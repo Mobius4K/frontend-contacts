@@ -16,6 +16,7 @@ import deleteImg from "../assets/bin.png";
 import editImg from "../assets/pencil.png";
 import contactoImg from "../assets/contactos.png";
 import { UseContact } from "../hooks/UseContact";
+import { editContact } from "../services/contactBook";
 
 export const ContactBook = () => {
 
@@ -42,6 +43,9 @@ export const ContactBook = () => {
       navigate("/");
     });
   };
+
+
+
 
   return (
     <div>
@@ -111,11 +115,11 @@ export const ContactBook = () => {
                     >
                       <img src={deleteImg} width={"25px"} height={"25px"} />
                     </button>
-                    <Link to={"/editContact/" + datos.id}>
-                      <button className="btn-edit">
+                     <Link to={"/editContact/"+ datos.id}>
+                      <button  className="btn-edit">
                         <img src={editImg} width={"25px"} height={"25px"} />
                       </button>
-                    </Link>
+                     </Link>
                   </div>
                 </TableCell>
               </TableRow>

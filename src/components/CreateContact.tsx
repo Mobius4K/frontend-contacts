@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import imgcontacto from "../assets/comunicar.png";
 import { crateContacts } from "../services/contactBook";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 interface DATA {
   nombre: string;
@@ -15,11 +15,8 @@ interface DATA {
 }
 
 export const CreateContact = (): JSX.Element => {
-
-
   // creamos este navigate para generar redirecciones
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   // Creamos un state para obtener los datos que seran modificados en el form
   const [contact, setContact] = useState<DATA>({
@@ -39,36 +36,31 @@ export const CreateContact = (): JSX.Element => {
     });
   };
 
-
   /* Hacemos una funciona Handle para enviar los datos al momento de que sean capturados 
   por los inputs*/
   const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     swal({
-      text:"¿Desea guardar el siguiente contacto?",
-      icon:"warning",
-      buttons:["NO","SI"]
-    }).then(respueta=>{
-
-      if(respueta){
-        crateContacts(contact)
-        navigate("/")
+      text: "¿Desea guardar el siguiente contacto?",
+      icon: "warning",
+      buttons: ["NO", "SI"],
+    }).then((respueta) => {
+      if (respueta) {
+        crateContacts(contact);
+        navigate("/");
       }
-    })
-
+    });
   };
 
   return (
     <div>
-             <div className="title">
+      <div className="title">
         <img src={imgcontacto} width="50px" />
         <h1> Crear contacto</h1>
       </div>
 
       <form onSubmit={handleChange} id="resetform">
-    <div className="container-fluid">
-        
-       
+        <div className="container-fluid">
           <div className="input">
             <label htmlFor="nombre">Nombre</label>
             <input
@@ -90,7 +82,6 @@ export const CreateContact = (): JSX.Element => {
               id="apellido"
               placeholder="Digitar apellido"
               value={contact.apellido}
-
               required
             />
           </div>
@@ -103,7 +94,6 @@ export const CreateContact = (): JSX.Element => {
               id="celular"
               placeholder="Digitar telefono"
               value={contact.celular}
-
               required
             />
           </div>
@@ -117,7 +107,6 @@ export const CreateContact = (): JSX.Element => {
               id="fijo"
               placeholder="Digitar telefono fijo"
               value={contact.fijo}
-
               required
             />
           </div>
@@ -130,7 +119,6 @@ export const CreateContact = (): JSX.Element => {
               id="correo"
               placeholder="Digitar correo"
               value={contact.correo}
-
               required
             />
           </div>
@@ -143,15 +131,17 @@ export const CreateContact = (): JSX.Element => {
               id="direccion"
               placeholder="Digitar direccion"
               value={contact.direccion}
-
               required
             />
           </div>
 
-          <button  type="submit" className="btn-createContact">
-           Guardar
+          <button type="submit" className="btn-createContact">
+            Guardar
           </button>
-              <button className="btn-return" onClick={()=>navigate("/")}> Regresar </button>
+          <button className="btn-return" onClick={() => navigate("/")}>
+            {" "}
+            Regresar{" "}
+          </button>
         </div>
       </form>
     </div>
