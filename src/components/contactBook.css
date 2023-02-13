@@ -1,0 +1,87 @@
+.title {
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.btn-contact {
+  background-color: #098765;
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.linkRoute {
+  text-decoration: none;
+}
+
+.btn-contact:hover {
+  background-color: #05f0c1;
+  color: black;
+}
+
+.cardContact {
+  background-color: #e1c4ff;
+  margin: auto;
+  width: 80%;
+  padding: 10px 2px 2px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: solid rgb(161, 154, 154) 2px;
+  -webkit-box-shadow: 0px 4px 33px -2px rgba(227, 218, 227, 1);
+  -moz-box-shadow: 0px 4px 33px -2px rgba(227, 218, 227, 1);
+  box-shadow: 0px 4px 33px -2px rgba(227, 218, 227, 1);
+}
+
+.btn-delete {
+  background-color: #ff0044be;
+  margin: 0.4rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 3px;
+}
+.btn-delete:hover {
+  background-color: #e08da3;
+
+}
+
+.btn-edit {
+  padding: 3px;
+  background-color: #e4e729de;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-edit:hover {
+ 
+  background-color: #c9bc4d;
+  
+}
+
+.btn-views{
+  padding: 3px;
+  background-color: rgba(77, 62, 216, 0.871);
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-crud {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}

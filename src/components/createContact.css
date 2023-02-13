@@ -1,0 +1,94 @@
+.container-fluid {
+  margin: auto;
+  background-color: #abd3f860;
+  padding: 10px;
+  width: 40%;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.container-fluid > div {
+  margin: 10px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0.8rem;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.input input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-createContact {
+  background-color: #098765;
+  border-radius: 10px;
+  width: 40%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  color: aliceblue;
+  font-weight: 600;
+}
+
+.btn-createContact:hover {
+  font-weight: 600;
+
+  background-color: #05f0c1;
+  color: black;
+}
+.linkContact {
+  text-decoration: none;
+  color: black;
+}
+
+.btn-view{
+
+  background-color: #098765;
+
+  width: 3rem;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+position: relative;
+left: 35rem;
+
+}
+
+
+.view{
+color: white;
+text-decoration: none;
+font-weight: 600;
+
+}
+
+.btn-return{
+
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+  font-weight: 600;
+
+}
+.btn-return:hover{
+  color: blue;
+
+}
+
+
+
